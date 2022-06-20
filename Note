@@ -1,0 +1,32 @@
+Package => db, main
+Class => [db] Connect, SQL. [main] BankSystem, Client, Account, BasicAccount, StrictAccount, DepositOnlyAccount, iDeposit, iWithdraw
+banksystem.sql => hasil export database dari phpMyAdmin
+
+
+BankSystem -> Main file
+
+Client -> Menyimpan data client
+
+Account -> Abstract Class
+BasicAccount -> Account tanpa minimum balance 
+	dan mengimplement interface iwithdraw dan ideposit(Dapat melakukan transaksi deposit dan withdraw).
+StrictAccount -> Account yang memiliki minimum balance sebesar 1.000.000 
+	dan mengimplement interface iwithdraw dan ideposit(Dapat melakukan transaksi deposit dan withdraw).
+DepositOnlyAccount -> Account tanpa minimum balance
+	dan mengimplement interface ideposit(Hanya dapat melakukan transaksi deposit).
+
+SQL -> digunakan untuk melakukan query kepada database
+
+Connect -> Database connection
+
+Design pattern yang digunakan hanya Singleton yang terdapat pada class Connect.
+
+Database menggunakan phpMyAdmin dengan nama banksystem dan memiliki 2 tabel
+
+Tabel yang pertama adalah Client dengan 
+primary key ClientID(Integer), kolom ClientName(VarChar 255), 
+ClientAddress(VarChar 255) dan ClientPhone(VarChar 255)
+
+Tabel yang kedua adalah Account dengan
+primary key AccountID(Integer), foreign key ClientID(Integer),
+kolom balance(Integer) dan AccountType(VarChar 255)
