@@ -2,6 +2,7 @@ Package => db, main
 Class => [db] Connect, SQL. [main] BankSystem, Client, Account, BasicAccount, StrictAccount, DepositOnlyAccount, iDeposit, iWithdraw
 banksystem.sql => hasil export database dari phpMyAdmin
 
+Untuk port host pada file Connect diubah menjadi 3307 karena port 3306 sudah digunakan. Port ini dapat diubah sesuai dengan konfigurasi xampp.
 
 BankSystem -> Main file
 
