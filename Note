@@ -20,7 +20,9 @@ SQL -> digunakan untuk melakukan query kepada database
 
 Connect -> Database connection
 
-Design pattern yang digunakan hanya Singleton yang terdapat pada class Connect.
+Design pattern:
+Singleton terdapat pada class Connect.
+Facade terdapat pada class SQL dimana disimpan semua proses untuk melakukan perubahan terhadap database(select, insert, delete, update).
 
 Database menggunakan phpMyAdmin dengan nama banksystem dan memiliki 2 tabel
 
